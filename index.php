@@ -62,6 +62,10 @@ $routeHandler = new RouteHandler($routes);
 
 $routeHandler->handleRoute();
 
+if (!isset($_SESSION['csrf_token'])) {
+    saveCsrfTokenInSession();
+}
+
 clearFlashMessages();
 clearOldFields();
 clearValidationErrors();
