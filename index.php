@@ -11,8 +11,12 @@ use App\DependencyContainer;
 use App\RouteHandler;
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+try {
+    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+} catch (Exception $e) {
+    
+}
 
 session_start();
 
